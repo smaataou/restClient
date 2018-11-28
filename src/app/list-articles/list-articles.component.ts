@@ -17,7 +17,6 @@ export class ListArticlesComponent implements OnInit {
   operation: String = 'add';
 
   selectedArticle: Article;
-  nom: String;
 
   constructor(private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute) {
     this.createForm();
@@ -41,7 +40,7 @@ export class ListArticlesComponent implements OnInit {
     this.articleService.getArticles().subscribe(
       data => {this.articles = data; console.log(this.articles); },
       error => {console.log('err'); },
-      () => {console.log('ls'); }
+      () => {console.log('loading articles was done'); }
     );
 
   }
